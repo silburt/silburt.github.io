@@ -50,8 +50,9 @@ h6 {
     position:relative;
     height: 20%;
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    color: #f8f8f8;
-    background: url(../img/transit.jpg) no-repeat center center;
+    /*color: #f8f8f8;*/
+    /*background: url(../img/transit.jpg) no-repeat center center;*/
+    background-color: #82bdf9;
     background-size: cover;
 }
 
@@ -198,7 +199,7 @@ h6 {
 
 footer {
     padding: 50px 0;
-    background-color: #f8f8f8;
+    background-color: #484848;
 }
 
 p.copyright {

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ari Silburt</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" </a>
+                    </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="research.html">Research</a>
+                    </li>
+                    <li>
+                        <a href="articles.html">Articles</a>
+                    </li>
+                    <li>
+                        <a href="files/Ari_CV.pdf" target="_blank">CV</a>
+                    </li>
+                    <li>
+                        <a href="personal.html">Personal</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="intro-header"></div>
+
+    <a name="Research"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-section-heading">Research</div>
+            </div>
+        </div>
+        <div class="row topbot-buffer">
+            <div class="col-lg-12">
+                <p class="lead">
+                I get really excited about planets. I am primarily interested in the formation of planetary systems, and the similarities
+                between the extra-solar planetary systems discovered via the Kepler Space Telescope and our own Solar System.
+            </div>
+        </div>
+    </div>
+    
+    <a name="hltau"></a>
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row vertical-align">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-5  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">How Common are Earth-Like Planets?</h2>
+                    <p>
+                    In 2009 the Kepler Space Telescope was launched into space, and for the first time ever scientists have had an opportunity to analyze a population of extra-solar planets. Kepler has detected over 3500 confirmed planets (and counting!), and from this data one can answer a few fundamental questions that humans have wondered since the dawn of time. One question that I have wondered for decades is, "Are there other Earth-like planets in the universe?"
+                    
+                    </p>
+                    <p>
+                    Along with Eric Gaidos and Yanqin Wu, I calculated that roughly 6.4% of stars house an Earth-like planet. Since there are roughly 200 billion stars in our galaxy, that means that there are roughly 13 billion Earth-like planets in our galaxy (every person on Earth could claim roughly two Earth-like planets for themselves =P)! In addition, I calculated that 66% of stars house a planet of some kind, which means that if you were to pick 2 random stars in the sky, one of them is likely to have a planet orbiting around it. Check out my <a href="http://arxiv.org/abs/1406.6048">paper</a> for the details!
+                    </p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <div class="row">
+                        <img class="img-responsive center-block" src="img/kepler186f.jpg" alt="">
+                        Artist impression of Kepler 186f, a potentially habitable world discovered by the Kepler Space Telescope (nasa.gov).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content-section-b">
+        <div class="container">
+            <div class="row vertical-align">
+                <div class="col-lg-5 col-sm-7">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Machine Learning and Planet Stability</h2>
+                    <p>
+                    Many famous scientists, including <a href="https://en.wikipedia.org/wiki/Isaac_Newton">Newton</a>, <a href="https://en.wikipedia.org/wiki/Joseph-Louis_Lagrange">Lagrange</a> and <a href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Gauss</a> have wondered whether the Solar System is longterm stable (i.e. will any planets collide or get ejected in the next few billion years). This was a difficult question to answer due to the chaotic nature of planetary systems, meaning that its evolution is highly sensitive to the initial conditions. Fortunately, for all of us today living in the age of computers (poor Newton), scientists can trivially use a N-body integrator like <a href="https://github.com/hannorein/rebound">REBOUND</a> to numerically evolve a planetary system into the future or past and determine whether the system is longterm stable. However, the downside of this method is that a single simulation can take weeks to complete, and due to chaotic nature of planetary systems thousands of simulations must be run (with slightly different initial conditions) to acquire statistically rigorous results. This can take a <i>long</i> time.
+                    </p>
+                    <p>
+                    Enter <a href="https://en.wikipedia.org/wiki/Machine_learning">machine learning</a>. Similar to how a human learns to recognize a cat throughout their life by seeing many examples of cats (and not cats), a computer can learn to recognize a cat by inputting many examples into a machine learning algorithm. In the context of astrophysics, we can use machine learning to teach a computer how to recognize planetary systems that are longterm stable by showing it many examples of stable/unstable systems. Once the computer is fully trained, it can accurately predict the longterm stability of a planetary system in seconds(!). Check out the <a href="https://arxiv.org/abs/1610.05359">paper</a> I co-authored on the subject!
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-1 col-sm-6">
+                    <div class="row">
+                        <img class="img-responsive center-block" src="img/machinelearning.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a name="irregulars"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-section-heading">Irregular Satellites</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-section-b">
+        <div class="container">
+            <div class="row vertical-align">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">The most collisionally evolved population in the Solar System</h2>
+                    <p class="lead">
+                    The irregular satellites are leftovers from the era of planet formation that were captured around each of our solar system's giant planets.
+                    As a result of this chaotic capture process, they form a swarm of mutually crossing orbits, and have been crashing violently into each other for the past 4.5 billion years.  
+                    I am working with the Cassini spacecraft to detect and characterize the resultant disk of debris around Saturn (the Phoebe ring) in order to learn more about these ancient bodies, and to develop a better theoretical understanding of where the material ends up in order to help constrain the Saturnian system's history.
+                    </p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive center-block" src="pix/irregulars.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row vertical-align">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">The mystery of two-faced Iapetus</h2>
+                    <p class="lead">
+                    The striking albedo difference between Iapetus' two hemispheres has been a mystery since Giovanni Cassini discovered the moon orbiting Saturn in 1671.
+                    It was suggested long ago (Soter 1974) that dark dust from the outer satellites evolving inward through radiation forces might explain Iapetus' odd surface pattern, but we performed the first full analysis  calculating the probability of impact with Iapetus and the expected surface distribution.  
+                    </p><p class="lead">
+                    We found that almost all particle sizes will strike Iapetus, and that the expected longitudinal distribution matches well the one observed, helping settle (at least theoretically!) a 300 year-old mystery. 
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <div class="row">
+                        <img class="img-responsive center-block" src="pix/iapetus.jpg" alt="">
+                    </div>
+                    <div class="row top-buffer">
+                        <p class="leadcenter">
+                        <a href="http://arxiv.org/abs/1106.1893" target="_blank">Tamayo, Burns, Hamilton and Hedman, 2011 Icarus</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section-b">
+        <div class="container">
+            <div class="row vertical-align">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Finding the largest rings in the solar system.</h2>
+                    <p class="lead">
+                    I was the science principal investigator on OT1 and OT2 observations with the infrared Herschel Space Observatory, trying to characterize the Phoebe ring around Saturn, and trying to discover similar debris disks sourced by irregular satellites around Uranus and Neptune.
+                    Unfortunately, we were only able to set upper limits on the amount of material present due to scattered light from the respective planets.
+                    </p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive center-block" src="pix/herschel.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row vertical-align">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Casting shadows on the Phoebe ring</h2>
+                    <p class="lead">
+                    One would think that it would be easy to detect the Phoebe ring at Saturn using the Cassini spacecraft in orbit about the planet.  
+                    The problem is that the ring is so vast, and the spacecraft so close, that the ring covers the entire field of view and provides a constant background that's extremely difficult to separate out.  
+                    </p><p class="lead">
+                    We therefore came up with a novel observation strategy, and planned for orbital alignments that would allow us to take images capturing Saturn's shadow piercing the Phoebe ring.
+                    This made it possible to indirectly measure the amount of material along the shadow by quantifying the brightness difference between the shadowed and unshadowed regions.
+                    </p><p class="lead">
+                    Comparing optical to infrared data allowed us to constrain the debris' physical properties, observationally linking it to the irregular satellites.
+                    We also measured how the amount of debris varies with distance from Saturn for the first time.
+                    I am quite proud of these results--they represent the faintest measurements of any extended solar system object by an order of magnitude!
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <div class="row">
+                        <img class="img-responsive center-block" src="pix/SatShadow.jpg" alt="">
+                    </div>
+                    <div class="row top-buffer">
+                        <p class="leadcenter">
+                        <a href="http://arxiv.org/abs/1604.03119" target="_blank">Tamayo, Markham*, Hedman, and Burns, 2016 Icarus</a><br />
+                        <a href="http://arxiv.org/abs/1401.6166" target="_blank">Tamayo, Hedman, and Burns, 2014 Icarus</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section-b">
+        <div class="container">
+            <div class="row vertical-align">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Uranus' extreme tilt scatters debris across its moons</h2>
+                    <p class="lead">
+                    In trying to undertake a similar analysis to our work on the Saturnian system, we were surprised to find in our integrations that as dust-particle orbits decay inward in the Uranian system, they reach a chaotic zone in which their orbits evolve onto nearly radial paths that bring the debris deep into the inner system. 
+                    </p><p class="lead">
+                    It turns out this instability is the result of Uranus' extreme axial tilt and the interaction of the planet's oblateness with gravitational perturbations from the Sun.  
+                    We showed this should spread debris across Uranus' four largest satellites, plausibly explaining hemispherical color dichotomies observed on their surfaces with the Voyager spacecraft.
+                    </p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <div class="row">
+                        <img class="img-responsive center-block" src="pix/uranus_ir.jpg" alt="">
+                    </div>
+                    <div class="row top-buffer">
+                        <p class="leadcenter">
+                        <a href="http://arxiv.org/abs/1306.3973" target="_blank">Tamayo, Burns, and Hamilton, 2013 Icarus</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <a name="Dynamics"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-section-heading">Dynamics</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row vertical-align">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">A machine learns to predict the stability of planetary systems</h2>
+                    <p class="lead">
+                    Determining whether a given planetary system will be dynamically stable over long times, and predicting the timescale on which unstable systems will unravel is an important and long-standing problem in orbital dynamics.
+                    </p><p class="lead">
+                    We took the novel approach of numerically integrating a number of planetary systems and using them as examples to train machine learning algorithms that have enjoyed wide success across a range of similarly high-dimensional applications in industry.
+                    With these tools we were able to determine whether planetary systems would be stable over 10 million orbits significantly better than simple heuristic criteria previously used in the field, and 1000 times faster than through direct numerical integration.
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <div class="row">
+                        <img class="img-responsive center-block" src="pix/computers.jpg" alt="">
+                    </div>
+                    <div class="row top-buffer">
+                        <p class="leadcenter">
+                        <a href="https://arxiv.org/abs/1610.05359" target="_blank">Tamayo, Silburt^, Valencia, Menou, Ali-Dib, Petrovich, Huang, Rein, van Laerhoven, Paradise^, Obertas*, and Murray, 2016 ApJ Letters</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <a name="Integrators"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-section-heading">Algorithms & Code</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row vertical-align">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Improved tools for fitting orbital trajectories</h2>
+                    <p class="lead">
+                    For a large class of orbital fitting problems, we are interested in how a body's position and/or trajectory would change if our initial parameters for the orbit were slightly wrong (e.g., will a newly discovered asteroid hit Earth!)
+                    People therefore derived first-order variational equations to integrate how these differences evolve with time. You can then calculate derivatives with respect to initial parameters that tell you <i>which direction</i> in phase space you needs to move to improve your fit.
+                    </p><p class="lead">
+                    We have derived and implemented <i>second-order</i> variational equations, which yield the additional information needed to know <i>how far</i> you need to move to reach the nearest best solution (local minimum).
+                    We hope to exploit these tools to build improved orbit-fitting algorithms.
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <div class="row">
+                        <img class="img-responsive center-block" src="pix/orbitfitting.png" alt="">
+                    </div>
+                    <div class="row top-buffer">
+                        <p class="leadcenter">
+                        <a href="http://arxiv.org/abs/1603.03424" target="_blank">Rein and Tamayo, 2016 MNRAS</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section-b">
+        <div class="container">
+            <div class="row vertical-align">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">A faster and more accurate integrator over billions of orbits</h2>
+                    <p class="lead">
+                    The so-called Wisdom-Holman algorithm revolutionized our ability to carry out planetary orbit integrations accurately and efficiently enough to reach timescales comparable to the age of the solar system.
+                    However, previously available implementations were biased, i.e., numerical errors grew coherently, leading to a steep error growth with time.
+                    </p><p class="lead">
+                    We have developed WHFast, an unbiased integrator whose numerical error is suppressed to the fundamental limit, while still outperforming the speed of currently available implementations.
+                    This is helping us (and others!) push numerical integrations further than ever before.
+                    </p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <div class="row">
+                        <img class="img-responsive center-block" src="pix/integration.png" alt="">
+                    </div>
+                    <div class="row top-buffer">
+                        <p class="leadcenter">
+                        <a href="http://arxiv.org/abs/1506.01084" target="_blank">Rein and Tamayo, 2015 MNRAS</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright text-muted small">Copyright &copy; Dan Tamayo 2017.</p> 
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
