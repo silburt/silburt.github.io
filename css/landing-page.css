@@ -27,7 +27,8 @@ h6 {
 }
 
 .topnav {
-    font-size: 14px; 
+    font-size: 14px;
+    background-color: #484848;  /* This is the navbar background color */
 }
 
 .lead {
@@ -199,9 +200,10 @@ h6 {
 
 footer {
     padding: 50px 0;
-    background-color: #484848;
+    background-color: #484848;  /* This is the footer background color */
 }
 
 p.copyright {
+    color: #cccccc;             /* This is the footer text color */
     margin: 15px 0 0;
 }
