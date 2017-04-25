@@ -83,7 +83,7 @@
         <div class="row topbot-buffer">
             <div class="col-lg-12">
                 <p class="lead">
-                I get really excited about planets, writing code and generating new insights from data. Astrophysics has all three, which is why im in the biz. Below are just a few highlights of things I've worked on. For a more complete list check out my <a href="files/Ari_CV.pdf">CV</a>.
+                I get really excited about studying planets, writing code, and generating data-driven insights. Astrophysics has all three, which is why im in the biz. Below are a few highlights of the things I've worked on. For a more complete list check out my <a href="files/Ari_CV.pdf">CV</a>.
             </div>
         </div>
     </div>
@@ -122,10 +122,10 @@
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Machine Learning and Planet Stability</h2>
                     <p>
-                    Many famous scientists, including <a href="https://en.wikipedia.org/wiki/Isaac_Newton">Newton</a>, <a href="https://en.wikipedia.org/wiki/Joseph-Louis_Lagrange">Lagrange</a> and <a href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Gauss</a> have wondered whether the Solar System is longterm stable (i.e. will any planets collide or get ejected in the next few billion years). This was a difficult question to answer due to the chaotic nature of planetary systems, meaning that its evolution is highly sensitive to the initial conditions. Fortunately, for all of us today living in the age of computers (poor Newton), scientists can trivially use a N-body integrator like <a href="https://github.com/hannorein/rebound">REBOUND</a> to numerically evolve a planetary system into the future or past and determine whether the system is longterm stable. However, the downside of this method is that a single simulation can take weeks to complete, and due to chaotic nature of planetary systems thousands of simulations must be run (with slightly different initial conditions) to acquire statistically rigorous results. This can take a <i>long</i> time.
+                    Many famous scientists, including <a href="https://en.wikipedia.org/wiki/Isaac_Newton">Newton</a>, <a href="https://en.wikipedia.org/wiki/Joseph-Louis_Lagrange">Lagrange</a> and <a href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Gauss</a> have wondered whether the Solar System is longterm stable (i.e. will any planets collide or get ejected from the system in the next few billion years). This is a difficult question to answer due to the chaotic nature of planetary systems, meaning that the system's evolution is highly sensitive to the initial conditions. Fortunately, for all of us today living in the age of computers (poor Newton), scientists can use a N-body integrator like <a href="https://github.com/hannorein/rebound">REBOUND</a> to numerically evolve a planetary system into the future or past and determine whether the system is longterm stable. However, the downside of this method is that a single simulation can take weeks to complete, and due to chaotic nature of planetary systems, thousands of simulations must be run (with slightly different initial conditions) to acquire statistically rigorous results. This can take a <i>long</i> time.
                     </p>
                     <p>
-                    Enter <a href="https://en.wikipedia.org/wiki/Machine_learning">machine learning</a>. Similar to how a human learns to recognize a cat by seeing many examples of cats throughout their life, a computer can learn to recognize a cat via machine learning by receiving many examples of what is and isn't a cat. In the context of astrophysics, we can use machine learning to teach a computer how to recognize stable (vs. unstable) planetary systems by showing it many examples of stable/unstable systems. Once the computer is fully trained, it can accurately predict the longterm stability of a planetary system in seconds! Check out the <a href="https://arxiv.org/abs/1610.05359">paper</a> I co-authored on the subject!
+                    Enter <a href="https://en.wikipedia.org/wiki/Machine_learning">machine learning</a>. Similar to how a human learns to recognize a cat by seeing many different examples of cats, a computer can learn to recognize a cat via machine learning by receiving many examples of what is and isn't a cat. In the context of astrophysics, we can use machine learning to teach a computer how to recognize stable (vs. unstable) planetary systems by showing it many examples of stable/unstable systems. Once the computer is fully trained, it can accurately predict the longterm stability of a planetary system in seconds! Check out the <a href="https://arxiv.org/abs/1610.05359">paper</a> I co-authored on the subject!
                     </p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-1 col-sm-6">
@@ -145,20 +145,20 @@
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Hermes - A Hybrid Integrator</h2>
                     <p>
-                    Much of my work involves N-body simulations using <a href="https://github.com/hannorein/rebound">REBOUND</a>,
-                    and an example simulation is shown on the left (a planet and 500 planetesimals orbiting
-                    around a central star). Close encounters, resonances, migration and tides are just a few of the many
-                    dynamical effects that can occur such a planetary system, and I'm fascinated by their role in shaping
-                    planetary systems.
+                    Much of my work involves N-body simulations using <a href="https://github.com/hannorein/rebound">REBOUND</a>.
+                    An example simulation is shown on the left, consisting of a planet and 500 planetesimals orbiting
+                    around a central star. Close encounters, resonances, migration and tides are just a few of the many
+                    dynamical effects that can occur such a planetary system. I am fascinated by their role in shaping
+                    planetary systems and specifically how they could have influenced the formation of our Solar System.
                     </p>
                     <p>
-                    I have contributed to the development of REBOUND by building <a href="files/HERMES.pdf">HERMES</a>, a hybrid integrator for simulating planetesimal migration and close encounters. In the real universe, for a given system of N-bodies certain quantities will be conserved like Energy and Momentum. However, when simulating these planetary systems on a computer, due to inherent numerical limitations (e.g. a computer cannot store an infinite number of digits), these quantities will grow with time. It turns out that, for standard integrators, these errors get particularly bad during close encounters. However, with HERMES these errors are remedied, permitting scientists to investigate increasingly complex problems! Like the rest of REBOUND, HERMES is open source and written in C, with a nice Python interface.
+                    I have contributed to the development of REBOUND by building <a href="files/HERMES.pdf">HERMES</a>, a hybrid integrator for simulating planetesimal migration and close encounters. Out in the real universe, for a given system of N-bodies certain quantities will be conserved, like energy and momentum. However, when simulating these planetary systems on a computer, due to inherent numerical limitations (e.g. a computer cannot store an infinite number of digits), these quantities will grow with time. As it turns out, for standard integrators these errors get particularly bad when two planets have a close encounter. However, with HERMES these errors are remedied, permitting scientists to investigate increasingly complex problems! Like the rest of REBOUND, HERMES is open source and written in C, with a nice Python wrapper.
                     </p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
                     <div class="row">
                         <img class="img-responsive center-block" src="img/Rebound.png" width="350" alt="">
-                            An example simulation in REBOUND of a planet embedded in a disk of 500 planetesimals, orbiting around a central star.
+                            An example simulation in REBOUND consisting of a star, planet, and a disk of 500 planetesimals.
                     </div>
                 </div>
             </div>
