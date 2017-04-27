@@ -98,8 +98,8 @@
     
     <div class="content-section-a">
         <div class="container">
-            <div class="row vertical-align">
-                <div class="col-lg-7 col-sm-7">
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-5  col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Basics of Chaos</h2>
@@ -124,32 +124,32 @@
 
     <div class="content-section-b">
         <div class="container">
-            <div class="col-lg-12">
-                <h2 class="section-heading">An Example</h2>
-                <p>
-                I'm a visual learner, and so I thought it would be useful to show a visual example of chaos. I'm going to use an astrophysics example since it's the domain I'm most familiar with. Below shows two planetary systems, System A and System B, consisting of a central star and two Neptune-sized planets (all shown as yellow dots). These two systems are <i>identical</i> except for the initial phase of the outer planet. By phase, I mean how many degrees of a full circle the planet has cycled through.
-                </p>
-                <div class="row">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="section-heading">An Example</h2>
+                    <p>
+                    I'm a visual learner, and so I thought it would be useful to show a visual example of chaos. I'm going to use an astrophysics example since it's the domain I'm most familiar with. Below shows two planetary systems, System A and System B, consisting of a central star and two Neptune-sized planets (all shown as yellow dots). These two systems are <i>identical</i> except for the initial phase of the outer planet. By phase, I mean how many degrees of a full circle the planet has cycled through.
+                    </p>
                     <div style="position:relative" align="center">
                         <img src="chaos/stable.png" width=300 hspace="60">
                         <img src="chaos/unstable.png" width=300 hspace="60">
                     </div>
-                </div>
-                </br><p>
-                OK, now let's simulate these systems using <a href="https://github.com/hannorein/rebound">REBOUND</a> for a couple thousand years (you can see the time in the bottom as "t=___", but it's small).
-                </p>
-                <div class="row">
-                    <div style="position:relative" align="center">
-                        <iframe src="https://www.youtube.com/embed/IYr4WZGzyUA?ecver=2" width="480" height="360" frameborder="0" allowfullscreen></iframe>
-                        <iframe src="https://www.youtube.com/embed/8G55rTJ-ohI?ecver=2" width="480" height="360" frameborder="0" allowfullscreen></iframe>
+                    </br><p>
+                    OK, now let's simulate these systems using <a href="https://github.com/hannorein/rebound">REBOUND</a> for a couple thousand years (you can see the time in the bottom as "t=___", but it's small).
+                    </p>
+                    <div class="row">
+                        <div style="position:relative" align="center">
+                            <iframe src="https://www.youtube.com/embed/IYr4WZGzyUA?ecver=2" width="480" height="360" frameborder="0" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/8G55rTJ-ohI?ecver=2" width="480" height="360" frameborder="0" allowfullscreen></iframe>
+                        </div>
                     </div>
+                    </br><p>
+                    Cool huh? The behaviour of System A is very irregular, suffering many close encounters. It's almost as if the planets are dancing with each other. As it turns out, these planets collide soon after the clip ends. For System B however, the behaviour is very periodic, regular, and almost boring. As stated before, the <i>only</i> difference between these two systems was the initial phase of the outer planet. It's pretty amazing that such a small difference can have such a large effect on the system. In System A the planets collide after roughly 10,000 years, while in System B the planets don't collide for millions of years. If these were real planetary systems and you had to pick which one to live on based only off the initial photos, it would be a pretty tough call.
+                    </p>
+                    <p>
+                    When scientists want to know whether a real planetary system is stable (be it the Solar System, an exoplanetary system discovered by Kepler, etc.), this is precisely how they do it. Thousands of near-identical systems are simulated and the results are aggregated to determine the typical lifetime of the system is. But as a result the answer is usually expressed as a probability vs. just a single number. For example, <a href="https://www.nature.com/nature/journal/v459/n7248/full/nature08096.html">studies</a> of the Solar System have shown that it is stable over billions of years, with Mercury having only a 1% chance of colliding with Venus or The Sun during that time. Whew.
+                    </p>
                 </div>
-                </br><p>
-                Cool huh? The behaviour of System A is very irregular, suffering many close encounters. It's almost as if the planets are dancing with each other. As it turns out, these planets collide soon after the clip ends. For System B however, the behaviour is very periodic, regular, and almost boring. As stated before, the <i>only</i> difference between these two systems was the initial phase of the outer planet. It's pretty amazing that such a small difference can have such a large effect on the system. In System A the planets collide after roughly 10,000 years, while in System B the planets don't collide for millions of years. If these were real planetary systems and you had to pick which one to live on based only off the initial photos, it would be a pretty tough call.
-                </p>
-                <p>
-                When scientists want to know whether a real planetary system is stable (be it the Solar System, an exoplanetary system discovered by Kepler, etc.), this is precisely how they do it. Thousands of near-identical systems are simulated and the results are aggregated to determine the typical lifetime of the system is. But as a result the answer is usually expressed as a probability vs. just a single number. For example, <a href="https://www.nature.com/nature/journal/v459/n7248/full/nature08096.html">studies</a> of the Solar System have shown that it is stable over billions of years, with Mercury having only a 1% chance of colliding with Venus or The Sun during that time. Whew.
-                </p>
             </div>
         </div>
     </div>
