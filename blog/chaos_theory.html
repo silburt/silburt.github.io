@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ari Silburt</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/landing-page.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" </a>
+                    </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="../index.html" style="color:#cccccc">Home</a>     <!-- need to add color to each button :/ -->
+                    </li>
+                    <li>
+                        <a href="../research.html" style="color:#cccccc">Research</a>
+                    </li>
+                    <li>
+                        <a href="../projects.html" style="color:#cccccc">Projects</a>
+                    </li>
+                    <li>
+                        <a href="../files/Ari_CV.pdf" style="color:#cccccc" target="_blank">CV</a>
+                    </li>
+                    <li>
+                        <a href="../personal.html" style="color:#cccccc">Personal</a>
+                    </li>
+                    <li>
+                        <a href="../contact.html" style="color:#cccccc">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="intro-header"></div>
+
+    <a name="Chaos Theory"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-section-heading">Chaos Theory
+                    </br><p style="font-size:18px;font-weight:normal;text-shadow:0px 0px 0px;">
+                    By: Ari Silburt</br>
+                    Date: April 29th, 2017
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row topbot-buffer">
+            <div class="col-lg-12">
+                <p class="lead">
+                From Edward Lorenz's 1963 paper, Deterministic Nonperiodic Flow:</br>
+                <i>
+                    "Two states differing by imperceptible amounts may eventually evolve into two considerably different states ... If, then, there is any error whatsoever in observing the present state—and in any real system such errors seem inevitable—an acceptable prediction of an instantaneous state in the distant future may well be impossible."
+                </i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row vertical-align">
+                <div class="col-lg-7 col-sm-7">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Basics of Chaos</h2>
+                    <p>
+                    <a href="https://en.wikipedia.org/wiki/Edward_Norton_Lorenz">Edward Lorenz</a> was an early pioneer of chaos theory, quantifying its behaviour and popularizing it as a concept. He is also responsible for coining the term <a href="https://en.wikipedia.org/wiki/Butterfly_effect">The Butterfly Effect</a>. As mentioned above, chaos describes how near-identical systems can evolve into substantially different states over time. Since humans cannot measure anything to infinite precision, this means that for any chaotic system humans have a limited range of predictability.
+                    </p>
+                    <p>
+                    This is precisely why the weatherman is often wrong. Weather predictions are generated by inputting the current state (teperature, pressure, elevation, etc.) of a region into a computer and simulating future possible outcomes. However, we cannot know these values to infinite precision. For example, maybe we know that the temperature at 12:01pm is 21.1&#x2103;, but we cannot know that the temperature at 12:01:05:32:36pm is 21.11238774&#x2103;. Hence there is <i>always</i> measurement error, and future weather predictions will be uncertain. It is worth mentioning that chaos is not binary (chaotic/not chaotic), and System A can be more chaotic than System B and in turn more chaotic than System C. One way of measuring the degree of chaos in a system is with the <a href="https://en.wikipedia.org/wiki/Lyapunov_exponent">Lyapunov Exponent</a>.
+                    </p>
+                    <p>
+                    Although the weatherman often takes a lot of heat (see what I did there) for being wrong he is not alone. Any chaotic system will have a limited range of predictability. Think about how often economists make incorrect predictions, how often the American presidential election predictions are wrong, or how often your March Madness bracket crumbles despite all the research you poured into it. Chaos my friends.
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-0.5 col-sm-6">
+                    <div class="row">
+                        <img class="img-responsive center-block" src="chaos/weatherman.jpg" width="400" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section-b">
+        <div class="container">
+            <div class="col-lg-12">
+                <h2 class="section-heading">An Example</h2>
+                <p>
+                I'm a visual learner, and so I thought it would be useful to show a visual example of chaos. I'm going to use an astrophysics example since it's the domain I'm most familiar with. Below shows two planetary systems, System A and System B, consisting of a central star and two Neptune-sized planets (all shown as yellow dots). These two systems are <i>identical</i> except for the initial phase of the outer planet. By phase, I mean how many degrees of a full circle the planet has cycled through.
+                </p>
+                <div class="row">
+                    <div style="position:relative" align="center">
+                        <img src="chaos/stable.png" width=300 hspace="60">
+                        <img src="chaos/unstable.png" width=300 hspace="60">
+                    </div>
+                </div>
+                </br><p>
+                OK, now let's simulate these systems using <a href="https://github.com/hannorein/rebound">REBOUND</a> for a couple thousand years (you can see the time in the bottom as "t=___", but it's small).
+                </p>
+                <div class="row">
+                    <div style="position:relative" align="center">
+                        <iframe src="https://www.youtube.com/embed/IYr4WZGzyUA?ecver=2" width="480" height="360" frameborder="0" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/8G55rTJ-ohI?ecver=2" width="480" height="360" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                </br><p>
+                Cool huh? The behaviour of System A is very irregular, suffering many close encounters. It's almost as if the planets are dancing with each other. As it turns out, these planets collide soon after the clip ends. For System B however, the behaviour is very periodic, regular, and almost boring. As stated before, the <i>only</i> difference between these two systems was the initial phase of the outer planet. It's pretty amazing that such a small difference can have such a large effect on the system. In System A the planets collide after roughly 10,000 years, while in System B the planets don't collide for millions of years. If these were real planetary systems and you had to pick which one to live on based only off the initial photos, it would be a pretty tough call.
+                </p>
+                <p>
+                When scientists want to know whether a real planetary system is stable (be it the Solar System, an exoplanetary system discovered by Kepler, etc.), this is precisely how they do it. Thousands of near-identical systems are simulated and the results are aggregated to determine the typical lifetime of the system is. But as a result the answer is usually expressed as a probability vs. just a single number. For example, <a href="https://www.nature.com/nature/journal/v459/n7248/full/nature08096.html">studies</a> of the Solar System have shown that it is stable over billions of years, with Mercury having only a 1% chance of colliding with Venus or The Sun during that time. Whew.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row vertical-align">
+                <div class="col-lg-7 col-sm-7">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">What is the Source of Chaos?</h2>
+                    <p>
+                    Within planetary systems, chaos stems from overlapping <a href="https://en.wikipedia.org/wiki/Orbital_resonance">resonances</a>. Resonance occurs when the orbital period of one planet is an integer ratio of another. For example, Earth's orbital period is 365 days, and if (say) Mars had an orbital period of 365*(2/1) = 730 days, it would be in a 2:1 resonance with Earth. If Mars' orbital period was 365*(3/2) = 547.5 days it would be in a 3:2 resonance with Earth. Chaos occurs when planets are simultaneously in multiple resonances, which usually happens when there are multiple interacting planets.
+                    </p>
+                    <p>
+                    But more fundamentally, why does this lead to chaos? This is a very complicated answer but I'll try and answer it simply. Picture yourself as a child, getting pushed on a swing by your favourite parent. Since your parent is pushing the swing at its <a href="https://en.wikipedia.org/wiki/Resonance">resonant frequency</a>, your amplitude increases (i.e. you go higher and higher with every push). In contrast, if your parent was pushing the swing at random times (i.e. not at the resonant frequency) you would never get very high. This is an example of a single resonance.
+                    </p>
+                    <p>
+                    When two or more resonances are involved, things get interesting. To the right is a movie showing the double pendulum, which is another great example of chaos. In context of our example, the double pendulum is like two swings attached together, you on the top swing and (say) your younger sibling on the bottom one. At certain times, your siblings' resonant frequency will be activated leading to a large amplitude swing, which will feed back onto your swing and affect your motion (e.g. maybe you don't get as high anymore cause your sibling 'stole' some of your energy). However, now that you are no longer swinging at exactly your resonant frequency, this will in turn will feed back and affect your siblings' motion, etc. The motion of each swing affects the total system in complicated, non-linear ways. Sometimes the swings may "catch a wave" together and excite one or both resonant frequencies leading to large amplitude swings, while other times the swings may exhibit seemingly predictable, boring behaviour.
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-1 col-sm-6">
+                    <div class="row">
+                        <div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/QXf95_EKS6E?ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section-b">
+        <div class="container">
+            <div class="col-lg-12">
+                <h2 class="section-heading">Chaos vs. Randomness</h2>
+                <p>
+                People often confused the difference between chaos and randomness, when really they are two very different things. Chaos describes how two near-identical systems will diverge into different states over time, while randomness describes the uncertainty of how a single system evolves in time.
+                </p>
+                <p>
+                <u>Chaos:</u> In a chaotic system <i>every future state is completely determined by the previous state</i>, which ultimately meeans that all future states are completely determined by the initial conditions. Let's return to System A from above for a moment. As it turns out, this system is chaotic but not random (i.e. deterministic chaos). Let's now make an identical copy of System A and call it System C. If we now simulated these systems into the future they would remain identical for all time.  Since System A and System C have the same initial conditions, they will evolve in identical ways, even if the evolution is complicated and non-linear.
+                </p>
+                <p>
+                <u>Randomness:</u> In contrast, for a random system <i>the current state does not determine future states</i>. For example, you can toss a coin a billion times, record and analyze the outcome of each toss, and it would not help predict the outcome of the next toss. Returning to our astrophysics example, if System A and System C were suddenly subject to random forces (say, flipping a coin and increasing/decreasing the planet speeds based off heads/tails) their trajectories would quickly diverge from being identical.
+                </p>
+                <p>
+                It is worth mentioning that <u>uncertainty</u> about the future can come from both chaos and randomness. As mentioned above, the weatherman's uncertainty about predicting the weather stems from the fact that we cannot measure anything with infinite precision. This is chaos-induced uncertainty. In addition, any random process is fundamentally uncertain, since future outcomes are independent of the present conditions and thus the past cannot be used to predict the future. In everyday life, it is usually difficult to know whether the dominant source of uncertainty is due to chaos or randomness (e.g. predicting stock prices in financial markets).
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+<div class="content-section-a">
+    <div class="container">
+        <div class="row vertical-align">
+            <div class="col-lg-7 col-sm-7">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Chaos and Life</h2>
+                <p>
+                Life on Earth is (among other things) a <i>very</i> chaotic place. As we saw earlier in this blog post, complicated chaotic interactions can occur when there are just two objects involved (two planets orbiting around a star, or two pendulums attached end to end). Billions of people live on this planet, all interacting with each other in complicated ways. In addition, all the animals, trees, rivers, tornadoes, avalanches, etc. also contribute to the chaos on Earth. So all in all, chaos is very prevalent in our lives. To put things in a bit of perspective, if anything in the past had been different, it is likely that you would not be here today. A couple examples that come to mind:
+                <ul>
+                    <li>If your parents had procreated even 10 minutes earlier/later than they did, you would not be alive.</li>
+                    <li>If any of your ancestors (all the way back to caveman days and beyond) had procreated even 10 minutes earlier/later than they did, you would not be alive. Factor into this all the world events throughout history and how they could have affected when your ancestors procreated (getting killed in war, starving to death, meeting someone else, etc.). </li>
+                    <li>If the comet that killed the dinosaurs missed the Earth, or impacted the Earth at a different place/time, the Earth would have evolved differently and you would not be alive.</li>
+                    <li>If <a href="https://en.wikipedia.org/wiki/Theia_(planet)">Theia</a> had missed the proto-Earth, or impacted it at a different place/time, the Earth would have evolved differently and you would not be alive.</li>
+                    <li>If we took a single asteroid in the early Solar System (see picture on the right) and moved it to a different location, the Solar System would have evolved differently (maybe there would be no Earth) and you would not be alive.</li>
+                </ul>
+                It boggles the mind to think about how easily you could have not been born, and how easily Earth could have turned out differently. In addition, think yourself in this present moment - your career, friends, hobbies, lifestyle, etc. - if one thing in the past had been different you would not be "you", but someone slightly different (or completely different). In addition, the earlier in time the change was made, the more impactful the difference would be.
+                </p>
+                <p>
+                Looking to the future, chaos theory suggests that the possibilities are endless as to who you could become and where you could end up (within the laws of physics/chemistry/biology of course). Maybe in ten years you are in the top 0.01% of income earners, or perhaps in ten years you are six feet under. Maybe a future near-death experience makes you fervently religous, or maybe a future near-death experience makes you fervently atheist. Chaos theory dictates that your life is a statistical impossibility, and yet here you are, reading this useless blog post, with the amazing gift of life at your fingertips.
+                </p>
+                <p>
+                Are you making the most of it?
+                </p>
+            </div>
+            <div class="col-lg-5 col-lg-offset-1 col-sm-6">
+                <div class="row">
+                    <img class="img-responsive center-block" src="chaos/earlySS.jpg" width="500" alt="">
+                        Artist's impression of the early Solar System.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+ var disqus_config = function () {
+ this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+ };
+ */
+(function() { // DON'T EDIT BELOW THIS LINE
+ var d = document, s = d.createElement('script');
+ s.src = 'https://silburt-github-io.disqus.com/embed.js';
+ s.setAttribute('data-timestamp', +new Date());
+ (d.head || d.body).appendChild(s);
+ })();
+    </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright text-muted small">Copyright &copy; Ari Silburt 2017.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
