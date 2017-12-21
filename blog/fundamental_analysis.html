@@ -12042,9 +12042,11 @@ If the EMH is false, money can be made by carefully selecting stocks. Surely you
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Getting-Financial-Data">Getting Financial Data<a class="anchor-link" href="#Getting-Financial-Data">&#182;</a></h3><p>Next, we need to scrape all the relevant fundamental quantities for each stock and process them down into features. <a href="http://www.morningstar.com/">morningstar.com</a> has an extensive list of "Key Ratios" and "Financials" for each stock:<br>
-&lt;img src="fundamental_analysis/morningstar.png", width=800&gt;</p>
-<p>Highlighted in purple is the export button that ordinary muggles might use to manually download financial data for all 5000 stocks, one by one. However, there's a faster, more efficient way to get this info. We can scrape each stock's financial data into a csv file using the following code snippet:</p>
+<h3 id="Getting-Financial-Data">Getting Financial Data<a class="anchor-link" href="#Getting-Financial-Data">&#182;</a></h3><p>Next, we need to scrape all the relevant fundamental quantities for each stock and process them down into features. <a href="http://www.morningstar.com/">morningstar.com</a> has an extensive list of "Key Ratios" and "Financials" for each stock:</p>
+<div>
+<br>
+<img src="fundamental_analysis/morningstar.png", width=800>
+</div><p>Highlighted in purple is the export button that ordinary muggles might use to manually download financial data for all 5000 stocks, one by one. However, there's a faster, more efficient way to get this info. We can scrape each stock's financial data into a csv file using the following code snippet:</p>
 <hr>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pattern.web</span> <span class="kn">import</span> <span class="n">URL</span>
 <span class="k">for</span> <span class="n">stock</span> <span class="ow">in</span> <span class="n">tickers</span><span class="p">[</span><span class="s1">&#39;Symbol&#39;</span><span class="p">]:</span>
@@ -12329,9 +12331,11 @@ If the EMH is false, money can be made by carefully selecting stocks. Surely you
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Once our random grid search is complete we can take the best model and look at test predictions. In the plot below, the green/purple histograms contain stocks that increased/decreased in price between $t$ and $t+1$, and the x-axis shows the model-predicted probability that the stock is a winner (i.e. the stock increased in price between $t$ and $t+1$).
-&lt;img src="fundamental_analysis/results.png", width=600&gt;</p>
-<p>Our model seems to have a relatively easy time spotting a winning stock but a hard time spotting a losing one. The losing stocks are uniformly spread over all probabilities, while the winning stocks tend to cluster near a probability of 1.</p>
+<p>Once our random grid search is complete we can take the best model and look at test predictions. In the plot below, the green/purple histograms contain stocks that increased/decreased in price between $t$ and $t+1$, and the x-axis shows the model-predicted probability that the stock is a winner (i.e. the stock increased in price between $t$ and $t+1$).</p>
+<p><div>
+<img src="fundamental_analysis/results.png", width=600>
+</div>
+Our model seems to have a relatively easy time spotting a winning stock but a hard time spotting a losing one. The losing stocks are uniformly spread over all probabilities, while the winning stocks tend to cluster near a probability of 1.</p>
 <p>When a model outputs probabilities there is no single "answer", but a range of answers that depends on your specific aims. Sometimes you want to recover as many positive cases as possible (at the cost of including a few negative cases in the process), while other times you want to avoid as many negative cases as possible (at the cost of rejecting most positive cases). The balance between these two scenarios is mediated through the <em>precision</em> and <em>recall</em>:
 $$
 \rm{Precision} = \frac{T_p}{T_p + F_p}\\
@@ -12348,11 +12352,13 @@ Here $T_p$ is the number of true positives (in our case: stocks correctly predic
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A really cool feature of XGBoost is the ability to rank feature importances. The plot below shows the relative importance of the top 20 features used by the model, ranked by split frequency:
-&lt;img src="fundamental_analysis/feature_importances_20.png", width=600&gt;</p>
-<p>The top two features are the current price $P_{t}$ and the change in price $dP/dt$. This seems to support the concept of <em>momentum</em> in finance, i.e. stocks that have increased in the past are likely to increase in the near future. The third most important feature is the Price-to-book ratio, a well-known important financial ratio for measuring a company's profitability. Plotting all of the features below, we can see that some features (Working Capital Ratio, Operating Margin %, etc.) are quite unimportant for predicting near-term profitability:
-&lt;img src="fundamental_analysis/feature_importances_all.png", width=600&gt;</p>
-
+<p>A really cool feature of XGBoost is the ability to rank feature importances. The plot below shows the relative importance of the top 20 features used by the model, ranked by split frequency:</p>
+<div>
+<img src="fundamental_analysis/feature_importances_20.png", width=600>
+</div><p>The top two features are the current price $P_{t}$ and the change in price $dP/dt$. This seems to support the concept of <em>momentum</em> in finance, i.e. stocks that have increased in the past are likely to increase in the near future. The third most important feature is the Price-to-book ratio, a well-known important financial ratio for measuring a company's profitability. Plotting all of the features below, we can see that some features (Working Capital Ratio, Operating Margin %, etc.) are quite unimportant for predicting near-term profitability:</p>
+<div>
+<img src="fundamental_analysis/feature_importances_all.png", width=600>
+</div>
 </div>
 </div>
 </div>
@@ -12382,64 +12388,11 @@ Here $T_p$ is the number of true positives (in our case: stocks correctly predic
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
     </div>
-    
   </div>
-  <!-- Disqus Comment Bar -->
-  <div id="disqus_thread"></div>
-  <script>
-      
-      /**
-       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-  
-  var disqus_config = function () {
-      this.page.url = 'https://silburt.github.io/blog/fundamental_analysis.html';    // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = 'fundamental_analysis/';                                       // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-  };
-  
-  (function() { // DON'T EDIT BELOW THIS LINE
-   var d = document, s = d.createElement('script');
-   s.src = 'https://silburt-github-io.disqus.com/embed.js';
-   s.setAttribute('data-timestamp', +new Date());
-   (d.head || d.body).appendChild(s);
-   })();
-      </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  
-  
-  <!-- Footer -->
-  <footer>
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-12">
-                  <p class="copyright text-muted small">Copyright &copy; Ari Silburt 2017.</p>
-              </div>
-          </div>
-      </div>
-  </footer>
-  
-  <!-- jQuery -->
-  <script src="js/jquery.js"></script>
-  
-  <!-- Bootstrap Core JavaScript -->
-  <script src="js/bootstrap.min.js"></script>
-  
-  <!-- Disqus Comment Counter -->
-  <script id="dsq-count-scr" src="//silburt-github-io.disqus.com/count.js" async></script>
-  
 </body>
+
+ 
+
+
 </html>
