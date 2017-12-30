@@ -11778,7 +11778,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Fundamental-Analysis-With-Machine-Learning-in-Python">Fundamental Analysis With Machine Learning in Python<a class="anchor-link" href="#Fundamental-Analysis-With-Machine-Learning-in-Python">&#182;</a></h1><h3 id="By:-Ari-Silburt">By: Ari Silburt<a class="anchor-link" href="#By:-Ari-Silburt">&#182;</a></h3><h3 id="Date:-December-20th,-2017">Date: December 20th, 2017<a class="anchor-link" href="#Date:-December-20th,-2017">&#182;</a></h3><p>The full code for this analysis can be found at <a href="https://github.com/silburt/Machine_Learning/tree/master/Fundamental_Analysis">https://github.com/silburt/Machine_Learning/tree/master/Fundamental_Analysis</a></p>
+<h1 id="Fundamental-Analysis-With-Machine-Learning-in-Python">Fundamental Analysis With Machine Learning in Python<a class="anchor-link" href="#Fundamental-Analysis-With-Machine-Learning-in-Python">&#182;</a></h1><h3 id="By:-Ari-Silburt">By: Ari Silburt<a class="anchor-link" href="#By:-Ari-Silburt">&#182;</a></h3><h3 id="Date:-December-20th,-2017">Date: December 20th, 2017<a class="anchor-link" href="#Date:-December-20th,-2017">&#182;</a></h3><p>The full code for this analysis can be found in my <a href="https://github.com/silburt/Machine_Learning/tree/master/Fundamental_Analysis">Machine Learning Repo</a>.</p>
 
 </div>
 </div>
@@ -11789,10 +11789,10 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="col-lg-6 col-sm-7">
-The Efficient Market Hypothesis (EMH) is a financial theory stating that current asset prices reflect all available information. A direct consequence of this theory is that a trading strategy cannot be concocted to consistently beat the market, and future prices cannot be predicted by analyzing prices from the past. It is a hotly debated theory, being supported by many like Burton Malkiel (wrote _A Random Walk Down Wall Street_) and Eugene Fama (credited with founding the theory), while also being contested by many like Andrew Lo and Craig MacKinlay (co-authored the paper _Stock Market Prices Do Not Follow Random Walks_ with >4000 citations).  
+The Efficient Market Hypothesis (EMH) is a financial theory stating that current asset prices reflect all available information. A direct consequence of this theory is that a trading strategy cannot be concocted to consistently beat the market, and future prices cannot be predicted by analyzing prices from the past. It is a hotly debated theory, being supported by many like Burton Malkiel (wrote <i>A Random Walk Down Wall Street</i>) and Eugene Fama (credited with founding the theory), while also being contested by many like Andrew Lo and Craig MacKinlay (co-authored the paper <i>Stock Market Prices Do Not Follow Random Walks</i> with over 4000 citations).    
 
-<br>
-If the EMH is false, money can be made by carefully selecting stocks. Surely you know of some person/entity who has boasted about analyzing market trends, carefully selecting a few stocks and earning huge profits. However, these cases by themselves don't falsify the EMH. For example, if I have 1,000 people each flip a coin 10 times, there will statistically be at least one person that flipped heads every single time. That person may think they are particularly amazing, when really it's just random processes + statistics at play. A kind of weird contradiction today is that the same institutions that try to make money from the stock market (and implicitly state that the EMH is false) often use Markov processes (i.e. random processes) to model it (e.g. Black-Scholes).  
+<br> <br>
+If the EMH is false, money can be made by carefully selecting stocks. Surely you know of some person/entity who has boasted about analyzing market trends, carefully selecting a few stocks and earning huge profits. However, these cases by themselves don't falsify the EMH. For example, if I have 1,000 people each flip a coin 10 times, there will statistically be at least one person that flipped heads every single time. That person may think they are particularly amazing, when really it's just probability at play. A semi-weird contradiction is that although random processes are used in many sectors of Finance today (e.g. Black-Scholes), it is still unclear whether stock prices really do evolve according to random walks.
 </div>
 <div>
 <img src="fundamental_analysis/stocks.jpg", width=450>
@@ -11805,7 +11805,7 @@ If the EMH is false, money can be made by carefully selecting stocks. Surely you
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Regardless of theory, it is an interesting exercise to see whether Machine Learning + Fundamental Analysis can be used to empirically predict future stock prices. Specifically, we can take all the stocks from the Wilshire 5000 index, get their stock prices and fundamental qualities at years $t$ and $t-1$, and see if the stock price at year $t+1$ can be accurately predicted. For concreteness, I will choose $t=2015$, but my code is generalizable to any $t$. I will also cast this problem as a classification problem instead of a regression problem. This means that if a stock increased between years $t$ and $t+1$ the machine learning algorithm should predict $1$, and $0$ otherwise. In contrast, casting this as a regression problem would mean I want to predict <em>how much</em> a stock increased or decreased between $t$ and $t+1$. As you can imagine, this is a much more difficult problem.</p>
+<p>Regardless of theory, it is an interesting exercise to see whether Machine Learning + Fundamental Analysis can be used to empirically predict future stock prices. Specifically, we can take all the stocks from the Wilshire 5000 index, get their stock prices and fundamental qualities at years $t$ and $t-1$, and see if the stock price at year $t+1$ can be accurately predicted. For concreteness, I will choose $t=2015$, but my code is generalizable to any $t$. I will also cast this problem as a classification problem instead of a regression problem. This means that if a stock increased between years $t$ and $t+1$ the machine learning algorithm should predict $1$, and $0$ otherwise. In contrast, casting this as a regression problem would mean I want to predict <i>how much</i> a stock increased or decreased between $t$ and $t+1$. As you can imagine, this is a much more difficult problem.</p>
 
 </div>
 </div>
@@ -11815,7 +11815,7 @@ If the EMH is false, money can be made by carefully selecting stocks. Surely you
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Setup">Setup<a class="anchor-link" href="#Setup">&#182;</a></h2><h3 id="Getting-Stock-Prices">Getting Stock Prices<a class="anchor-link" href="#Getting-Stock-Prices">&#182;</a></h3><p>First we need some stocks. From <a href="http://www.beatthemarketanalyzer.com/blog/wilshire-5000-stock-tickers-list/">here</a> I got an excel file containing all the stocks from the Wilshire5000 index and converted it to a csv, which can then be easily loaded with pandas:</p>
+<h2 id="Setup">Setup<a class="anchor-link" href="#Setup">&#182;</a></h2><h3 id="Getting-Stock-Prices">Getting Stock Prices<a class="anchor-link" href="#Getting-Stock-Prices">&#182;</a></h3><p>First we need some stocks. From <a href="http://www.beatthemarketanalyzer.com/blog/wilshire-5000-stock-tickers-list/">here</a> I got an Excel file containing all the stocks from the Wilshire5000 index and converted it to a csv, which can then be easily loaded with <code>pandas</code>:</p>
 
 </div>
 </div>
@@ -12046,13 +12046,13 @@ If the EMH is false, money can be made by carefully selecting stocks. Surely you
 <div>
 <br>
 <img src="fundamental_analysis/morningstar.png", width=800>
-</div><p>Highlighted in purple is the export button that ordinary muggles might use to manually download financial data for all 5000 stocks, one by one. However, there's a faster, more efficient way to get this info. We can scrape each stock's financial data into a csv file using the following code snippet:</p>
+</div><p>Highlighted in purple is the export button that muggles might use to manually download financial data for all 5000 stocks, one by one. However, there's a faster, more efficient way to get this info. We can scrape each stock's financial data into a csv file using the following code snippet:</p>
 <hr>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pattern.web</span> <span class="kn">import</span> <span class="n">URL</span>
 <span class="k">for</span> <span class="n">stock</span> <span class="ow">in</span> <span class="n">tickers</span><span class="p">[</span><span class="s1">&#39;Symbol&#39;</span><span class="p">]:</span>
     <span class="n">webpage</span> <span class="o">=</span> <span class="s2">&quot;http://financials.morningstar.com/ajax/exportKR2CSV.html?t=</span><span class="si">%s</span><span class="s2">&amp;culture=en-CA&amp;region=USA&amp;order=asc&amp;r=314562&quot;</span><span class="o">%</span><span class="n">stock</span>
     <span class="n">url</span> <span class="o">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">webpage</span><span class="p">)</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_keyratios.csv&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">stock</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_keyratios.csv&#39;</span><span class="o">%</span><span class="n">stock</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">download</span><span class="p">())</span>
     <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -12060,7 +12060,7 @@ If the EMH is false, money can be made by carefully selecting stocks. Surely you
 <p>In the above code, the <code>webpage</code> variable was obtained by:</p>
 <ul>
 <li>Navigating to developer tools under Chrome web browser and clicking the network tab to monitor the ALL tab. </li>
-<li>Pressing the export button on the webpage for a single stock and detecting the corresponding url request sent in the ALL tab. </li>
+<li>Pressing the export button on the webpage for a single stock and find the corresponding url request sent in the ALL tab. </li>
 </ul>
 
 </div>
@@ -12071,7 +12071,7 @@ If the EMH is false, money can be made by carefully selecting stocks. Surely you
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Preparing-Data-Arrays">Preparing Data Arrays<a class="anchor-link" href="#Preparing-Data-Arrays">&#182;</a></h3><p>Now comes the most difficult part. We need to process all the financial data into <code>X</code> and <code>y</code> data arrays that a machine learning algorithm can use. In principal it's not difficult, but there's a lot of subtle cleaning and processing that has to happen like:</p>
+<h3 id="Preparing-Data-Arrays">Preparing Data Arrays<a class="anchor-link" href="#Preparing-Data-Arrays">&#182;</a></h3><p>Now comes the most difficult part. We need to process all the financial data into <code>X</code> and <code>y</code> data arrays that a machine learning algorithm can use. In principal it's not difficult, but there's a lot of cleaning and processing that has to happen like:</p>
 <ul>
 <li>Converting financial data that are cast in other currencies to USD (you'd think all stocks from the Wilshire 5000 would be in USD already...).</li>
 <li>Removing entire features that are sparsely filled.</li>
@@ -12295,7 +12295,7 @@ If the EMH is false, money can be made by carefully selecting stocks. Surely you
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Machine-Learning-Time">Machine Learning Time<a class="anchor-link" href="#Machine-Learning-Time">&#182;</a></h3><p>An article by <a href="https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/#32d83d1d6f63">forbes</a> claimed that the average data scientist spends 60% of their time cleaning data, and this project is no exception. After a lot of scraping, cleaning and preparing, we are finally ready to do some machine learning. Here we will use <a href="http://xgboost.readthedocs.io/en/latest/model.html">XGBoost</a> (eXtreme Gradient Boosted Decision Trees), a popular decision tree classifier.</p>
+<h3 id="Machine-Learning-Time">Machine Learning Time<a class="anchor-link" href="#Machine-Learning-Time">&#182;</a></h3><p>An article by <a href="https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/#32d83d1d6f63">Forbes</a> claimed that the average data scientist spends 60% of their time cleaning data, and this project is no exception. After a lot of scraping, cleaning and preparing, we are finally ready to do some machine learning. Here we will use <a href="http://xgboost.readthedocs.io/en/latest/model.html">XGBoost</a> (eXtreme Gradient Boosted Decision Trees), a popular decision tree classifier.</p>
 <p>We split our data into train and test sets so we can measure model performance on unseen test examples after training on the train set. In addition, we also scale our positive class by <code>scale_pos_weight</code> to offset any class imbalances, and tune the hyperparameters by performing a random grid search with cross validation:</p>
 <hr>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xgboost</span> <span class="kn">as</span> <span class="nn">xgb</span>
@@ -12336,13 +12336,13 @@ If the EMH is false, money can be made by carefully selecting stocks. Surely you
 <img src="fundamental_analysis/results.png", width=600>
 </div>
 Our model seems to have a relatively easy time spotting a winning stock but a hard time spotting a losing one. The losing stocks are uniformly spread over all probabilities, while the winning stocks tend to cluster near a probability of 1.</p>
-<p>When a model outputs probabilities there is no single "answer", but a range of answers that depends on your specific aims. Sometimes you want to recover as many positive cases as possible (at the cost of including a few negative cases in the process), while other times you want to avoid as many negative cases as possible (at the cost of rejecting most positive cases). The balance between these two scenarios is mediated through the <em>precision</em> and <em>recall</em>:
+<p>When a model outputs probabilities there is no single "answer", but a range of answers that depends on your specific aims. Sometimes you want to recover as many positive cases as possible (at the cost of including many negative cases), while other times you want to avoid as many negative cases as possible (at the cost of rejecting most positive cases). The balance between these two scenarios is mediated through the <i>precision</i> and <i>recall</i>:
 $$
 \rm{Precision} = \frac{T_p}{T_p + F_p}\\
 \rm{Recall} = \frac{T_p}{T_p + F_n}
 $$
-Here $T_p$ is the number of true positives (in our case: stocks correctly predicted by the model as winners), $F_p$ is the number of false positives (losing stocks incorrectly predicted by the model as winners), and $F_n$ is the number of false negatives (winning stocks incorrectly predicted by the model as losers). In order to make a firm classification we have to set a threshold $T_w$, i.e. all stocks with a model-predicted probability greater than $T_w$ are classified by the model as winners, while all others are classified as losers. A dotted line corresponding to $T_w = 0.9$ is shown in the plot above, and for this case many winning stocks are correctly classified as winners but some losing stocks are incorrectly also classified to be winners in the process. For $T_w=0.9$, $\rm{Precision} = 0.89$ and $\rm{Recall} = 0.40$.</p>
-<p>In the context of finance, a high precision and low recall is best. That is, we would prefer choosing only a few winning stocks but have high confidence in our predictions. Thus, we would likely set the classification threshold to $T_w=0.99$, giving us $\rm{Precision} = 1.0$ and $\rm{Recall} = 0.12$.</p>
+Here $T_p$ is the number of true positives (in our case: stocks correctly predicted by the model as winners), $F_p$ is the number of false positives (losing stocks incorrectly predicted by the model as winners), and $F_n$ is the number of false negatives (winning stocks incorrectly predicted by the model as losers). In order to make a firm classification we have to set a threshold $T_w$, i.e. all stocks with a model-predicted probability greater than $T_w$ are classified by the model as winners, while all others are classified by the model as losers. A dotted line corresponding to $T_w = 0.9$ is shown in the plot above, and for this case many winning stocks are correctly classified as winners but some losing stocks are incorrectly also classified as winners in the process. For $T_w=0.9$, $\rm{Precision} = 0.89$ and $\rm{Recall} = 0.40$.</p>
+<p>In the context of Finance, a high precision and low recall is best. That is, we would prefer choosing only a few winning stocks but have high confidence in our predictions. Thus, we would likely set the classification threshold to $T_w=0.99$, giving us $\rm{Precision} = 1.0$ and $\rm{Recall} = 0.12$.</p>
 
 </div>
 </div>
@@ -12352,10 +12352,10 @@ Here $T_p$ is the number of true positives (in our case: stocks correctly predic
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A really cool feature of XGBoost is the ability to rank feature importances. The plot below shows the relative importance of the top 20 features used by the model, ranked by split frequency:</p>
+<p>A really cool feature of XGBoost is the ability to rank feature importances. The plot below shows the relative importance of the top 20 features used by the model, ranked by split frequency (F-score):</p>
 <div>
 <img src="fundamental_analysis/feature_importances_20.png", width=600>
-</div><p>The top two features are the current price $P_{t}$ and the change in price $dP/dt$. This seems to support the concept of <em>momentum</em> in finance, i.e. stocks that have increased in the past are likely to increase in the near future. The third most important feature is the Price-to-book ratio, a well-known important financial ratio for measuring a company's profitability. Plotting all of the features below, we can see that some features (Working Capital Ratio, Operating Margin %, etc.) are quite unimportant for predicting near-term profitability:</p>
+</div><p>The top two features are the current price $P_{t}$ and the change in price $dP/dt$. This seems to support the concept of <em>momentum</em> in finance, i.e. stocks that have increased in the past are likely to increase in the near future. The third most important feature is the Price-to-book ratio, a well-known important financial ratio for measuring a company's profitability. Plotting all of the features below, we can see that some features like Working Capital Ratio, Operating Margin %, etc. are quite unimportant for predicting near-term profitability:</p>
 <div>
 <img src="fundamental_analysis/feature_importances_all.png", width=600>
 </div>
@@ -12377,13 +12377,13 @@ Here $T_p$ is the number of true positives (in our case: stocks correctly predic
 </ul>
 <p>From here, one could start developing a trading strategy that would (hopefully) generate consistent positive returns over time. Looking at a few other years, sometimes the model doesn't do as well as I would hope, while other times it does even better. Further improvements could certainly be made to the above pipeline, like:</p>
 <ul>
-<li>Breaking the Wilshire 5000 index into individual sectors since different sectors have different baseline standards and mixing them together can confuse the model. For example, according to <a href="http://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/pbvdata.html">this</a> a Price/Book ratio of $1.5$ is pretty good if your in the banking sector but terrible if you're in the Broadcasting sector.</li>
+<li>Breaking the Wilshire 5000 index into individual sectors since different sectors have different baseline standards and mixing them together can confuse the model. For example, according to the <a href="http://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/pbvdata.html">Stern School of Business</a> a Price/Book ratio of $1.5$ is pretty good if your in the banking sector but terrible if you're in the Broadcasting sector.</li>
 <li>Filter by marketcap - like different sectors, different stocks of different market caps (small, medium, large) will also have different baseline standards. </li>
 <li>Use a longer lookback time - Above we trained a model using only $t$ and $t-1$ to predict $t+1$, but one could easily extend the model to include $t-3$, $t-4$, ..., $t-X$ financial data.</li>
 <li>Cast the problem as a regression problem instead of classification. This is a more difficult but fruitful problem, since now you are trying to predict a value. </li>
 </ul>
 <p>One thing to be wary of if implementing some of these improvements is that at some point your dataset will become too small to effectively train your model as you keep chopping it up (by sector, market cap, etc.).  Machine learning in general requires a lot of data, and it was already perhaps pushing it using only 5000 stocks to train the model (vs. say 50,000).</p>
-<p>Anyway, I hope you enjoyed this post analyzing stock prices using fundamental analysis and machine learning!</p>
+<p>I hope you enjoyed this post analyzing stock prices using fundamental analysis and machine learning!</p>
 
 </div>
 </div>
