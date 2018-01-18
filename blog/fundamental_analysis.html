@@ -11789,10 +11789,10 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="col-lg-6 col-sm-7">
-The Efficient Market Hypothesis (EMH) is a financial theory stating that current asset prices reflect all available information. A direct consequence of this theory is that a trading strategy cannot be concocted to consistently beat the market, and future prices cannot be predicted by analyzing prices from the past. It is a hotly debated theory, being supported by many like Burton Malkiel (wrote <i>A Random Walk Down Wall Street</i>) and Eugene Fama (credited with founding the theory), while also being contested by many like Andrew Lo and Craig MacKinlay (co-authored the paper <i>Stock Market Prices Do Not Follow Random Walks</i> with over 4000 citations).    
+The Efficient Market Hypothesis (EMH) is a financial theory stating that current asset prices reflect all available information. A direct consequence of this theory is that a trading strategy cannot be concocted to consistently beat the market, and future prices cannot be predicted by analyzing prices from the past. It is a hotly debated theory, being supported by many like Burton Malkiel (wrote <i>A Random Walk Down Wall Street</i>) and Eugene Fama (credited with founding the theory), while also being contested by many like Andrew Lo and Craig MacKinlay (co-authors of the paper <i>Stock Market Prices Do Not Follow Random Walks</i> with over 4000 citations).    
 
 <br> <br>
-If the EMH is false, money can be made by carefully selecting stocks. Surely you know of some person/entity who has boasted about analyzing market trends, carefully selecting a few stocks and earning huge profits. However, these cases by themselves don't falsify the EMH. For example, if I have 1,000 people each flip a coin 10 times, there will statistically be at least one person that flipped heads every single time. That person may think they are particularly amazing, when really it's just probability at play. A semi-weird contradiction is that although random processes are used in many sectors of Finance today (e.g. Black-Scholes), it is still unclear whether stock prices really do evolve according to random walks.
+If the EMH is false, money can be made by carefully selecting stocks. Surely you know of some person/entity who has boasted about analyzing market trends, carefully selecting a few stocks and earning huge profits. However, these cases by themselves don't falsify the EMH. For example, if I have 1,000 people each flip a coin 10 times, there will statistically be at least one person that flipped heads every single time. That person may think they are particularly amazing, when really it's just probability at play. Although random processes are used in many sectors of Finance today (e.g. Black-Scholes), it is still unclear whether stock prices really do evolve according to random walks.
 </div>
 <div>
 <img src="fundamental_analysis/stocks.jpg", width=450>
@@ -11805,7 +11805,7 @@ If the EMH is false, money can be made by carefully selecting stocks. Surely you
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Regardless of theory, it is an interesting exercise to see whether Machine Learning + Fundamental Analysis can be used to empirically predict future stock prices. Specifically, we can take all the stocks from the Wilshire 5000 index, get their stock prices and fundamental qualities at years $t$ and $t-1$, and see if the stock price at year $t+1$ can be accurately predicted. For concreteness, I will choose $t=2015$, but my code is generalizable to any $t$. I will also cast this problem as a classification problem instead of a regression problem. This means that if a stock increased between years $t$ and $t+1$ the machine learning algorithm should predict $1$, and $0$ otherwise. In contrast, casting this as a regression problem would mean I want to predict <i>how much</i> a stock increased or decreased between $t$ and $t+1$. As you can imagine, this is a much more difficult problem.</p>
+<p>Regardless of theory, it is an interesting exercise to see whether Machine Learning + Fundamental Analysis can be used to empirically predict future stock prices. Specifically, can we take all the stocks from the Wilshire 5000 index, get their stock prices and fundamental qualities at years $t$ and $t-1$, and accurately predict the stock price at year $t+1$? For concreteness, I will choose $t=2015$, but my code is generalizable to any $t$. I will also cast this problem as a classification problem instead of a regression problem. This means that if a stock increased between years $t$ and $t+1$ the machine learning algorithm should predict $1$, and $0$ otherwise. In contrast, casting this as a regression problem would mean I want to predict <i>how much</i> a stock increased or decreased between $t$ and $t+1$. As you can imagine, this is a much more difficult problem.</p>
 
 </div>
 </div>
@@ -11825,7 +11825,7 @@ If the EMH is false, money can be made by carefully selecting stocks. Surely you
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">tickers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;fundamental_analysis/wilshire5000.csv&#39;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
 <span class="n">tickers</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -11917,7 +11917,7 @@ If the EMH is false, money can be made by carefully selecting stocks. Surely you
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">pandas_datareader</span> <span class="kn">import</span> <span class="n">data</span> <span class="k">as</span> <span class="n">pdr</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pandas_datareader</span> <span class="k">import</span> <span class="n">data</span> <span class="k">as</span> <span class="n">pdr</span>
 <span class="kn">import</span> <span class="nn">fix_yahoo_finance</span>
 <span class="n">pdr</span><span class="o">.</span><span class="n">get_data_yahoo</span><span class="p">(</span><span class="n">tickers</span><span class="p">[</span><span class="s1">&#39;Symbol&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;2015-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2015-01-08&#39;</span><span class="p">)</span>
 </pre></div>
@@ -12032,7 +12032,7 @@ If the EMH is false, money can be made by carefully selecting stocks. Surely you
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Choosing $t=2015$, we will take the mean Adjusted Close price $P$ in January 2015 and January 2014, and try to predict whether the mean Adjusted Close price increased or decreased by January 2016. That is, given $P_{t}$ and $P_{t-1}$ we will try to predict if $P_{t+1}/P_{t} > 1$. For the remainder of this post I define "winning" stocks to be those with $P_{t+1}/P_{t} > 1$ and "losing" stocks to be those with $P_{t+1}/P_{t} <= 1$.</p>
+<p>Choosing $t=2015$, we will take the mean Adjusted Close prices from January 2015 ($P_t$) and January 2014 ($P_{t-1}$), and try to predict whether the mean Adjusted Close price in January 2016 ($P_{t+1}$) increased or decreased. That is, given $P_{t}$ and $P_{t-1}$ we will try to predict if $P_{t+1}/P_{t} > 1$. For the remainder of this post I define "winning" stocks to be those with $P_{t+1}/P_{t} > 1$ and "losing" stocks to be those with $P_{t+1}/P_{t} <= 1$.</p>
 
 </div>
 </div>
@@ -12042,7 +12042,7 @@ If the EMH is false, money can be made by carefully selecting stocks. Surely you
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Getting-Financial-Data">Getting Financial Data<a class="anchor-link" href="#Getting-Financial-Data">&#182;</a></h3><p>Next, we need to scrape all the relevant fundamental quantities for each stock and process them down into features. <a href="http://www.morningstar.com/">morningstar.com</a> has an extensive list of "Key Ratios" and "Financials" for each stock:</p>
+<h3 id="Getting-Financial-Data">Getting Financial Data<a class="anchor-link" href="#Getting-Financial-Data">&#182;</a></h3><p>Next, we need to scrape all the relevant fundamental quantities for each stock and process them down into features. <a href="http://www.morningstar.com/">morningstar.com</a> has an extensive list of "Key Ratios" and "Financials" for each stock. The image below shows an example for Agilent Technologies:</p>
 <div>
 <br>
 <img src="fundamental_analysis/morningstar.png", width=800>
@@ -12089,7 +12089,7 @@ If the EMH is false, money can be made by carefully selecting stocks. Surely you
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;fundamental_analysis/X.csv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;fundamental_analysis/X.csv&#39;</span><span class="p">)</span>
 <span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -12331,17 +12331,17 @@ If the EMH is false, money can be made by carefully selecting stocks. Surely you
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Once our random grid search is complete we can take the best model and look at test predictions. In the plot below, the green/purple histograms contain stocks that increased/decreased in price between $t$ and $t+1$, and the x-axis shows the model-predicted probability that the stock is a winner (i.e. the stock increased in price between $t$ and $t+1$).</p>
+<p>Once our random grid search is complete we can take the best model and look at test predictions. In the plot below, the green histogram corresponds to stocks where $P_{t+1}/P_t >1$ (i.e. winners), the purple histogram corresponds to stocks where $P_{t+1}/P_t < 1$ (i.e. losers), and the x-axis shows the model-predicted probability that the stock is a winner.</p>
 <p><div>
 <img src="fundamental_analysis/results.png", width=600>
 </div>
 Our model seems to have a relatively easy time spotting a winning stock but a hard time spotting a losing one. The losing stocks are uniformly spread over all probabilities, while the winning stocks tend to cluster near a probability of 1.</p>
-<p>When a model outputs probabilities there is no single "answer", but a range of answers that depends on your specific aims. Sometimes you want to recover as many positive cases as possible (at the cost of including many negative cases), while other times you want to avoid as many negative cases as possible (at the cost of rejecting most positive cases). The balance between these two scenarios is mediated through the <i>precision</i> and <i>recall</i>:
+<p>When a model outputs probabilities, there is no single "answer" but instead a range of answers that depends on your specific aims. Sometimes you want to recover as many positive cases as possible (at the cost of including many negative cases), while other times you want to avoid as many negative cases as possible (at the cost of rejecting most positive cases). The balance between these two scenarios is mediated through the <i>precision</i> and <i>recall</i>:
 $$
 \rm{Precision} = \frac{T_p}{T_p + F_p}\\
 \rm{Recall} = \frac{T_p}{T_p + F_n}
 $$
-Here $T_p$ is the number of true positives (in our case: stocks correctly predicted by the model as winners), $F_p$ is the number of false positives (losing stocks incorrectly predicted by the model as winners), and $F_n$ is the number of false negatives (winning stocks incorrectly predicted by the model as losers). In order to make a firm classification we have to set a threshold $T_w$, i.e. all stocks with a model-predicted probability greater than $T_w$ are classified by the model as winners, while all others are classified by the model as losers. A dotted line corresponding to $T_w = 0.9$ is shown in the plot above, and for this case many winning stocks are correctly classified as winners but some losing stocks are incorrectly also classified as winners in the process. For $T_w=0.9$, $\rm{Precision} = 0.89$ and $\rm{Recall} = 0.40$.</p>
+Here $T_p$ is the number of true positives (in our case: stocks correctly predicted by the model as winners), $F_p$ is the number of false positives (losing stocks incorrectly predicted by the model as winners), and $F_n$ is the number of false negatives (winning stocks incorrectly predicted by the model as losers). In order to make a firm classification we have to set a threshold $T_w$, i.e. all stocks with a model-predicted probability greater than $T_w$ are classified by the model as winners, while all others are classified by the model as losers. A dotted line corresponding to $T_w = 0.9$ is shown in the plot above, and for this case many winning stocks are correctly classified as winners but some losing stocks are also incorrectly classified as winners in the process. For $T_w=0.9$, $\rm{Precision} = 0.89$ and $\rm{Recall} = 0.40$.</p>
 <p>In the context of Finance, a high precision and low recall is best. That is, we would prefer choosing only a few winning stocks but have high confidence in our predictions. Thus, we would likely set the classification threshold to $T_w=0.99$, giving us $\rm{Precision} = 1.0$ and $\rm{Recall} = 0.12$.</p>
 
 </div>
@@ -12352,7 +12352,7 @@ Here $T_p$ is the number of true positives (in our case: stocks correctly predic
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A really cool feature of XGBoost is the ability to rank feature importances. The plot below shows the relative importance of the top 20 features used by the model, ranked by split frequency (F-score):</p>
+<p>A really cool feature of XGBoost is the ability to rank feature importances. The plot below shows the relative importance of the top 20 features used by the model, ranked by split frequency (a.k.a. F-score):</p>
 <div>
 <img src="fundamental_analysis/feature_importances_20.png", width=600>
 </div><p>The top two features are the current price $P_{t}$ and the change in price $dP/dt$. This seems to support the concept of <em>momentum</em> in finance, i.e. stocks that have increased in the past are likely to increase in the near future. The third most important feature is the Price-to-book ratio, a well-known important financial ratio for measuring a company's profitability. Plotting all of the features below, we can see that some features like Working Capital Ratio, Operating Margin %, etc. are quite unimportant for predicting near-term profitability:</p>
@@ -12375,24 +12375,84 @@ Here $T_p$ is the number of true positives (in our case: stocks correctly predic
 <li>Train a machine learning algorithm to predict stock prices using financial data as input features.</li>
 <li>Analyze the results.</li>
 </ul>
-<p>From here, one could start developing a trading strategy that would (hopefully) generate consistent positive returns over time. Looking at a few other years, sometimes the model doesn't do as well as I would hope, while other times it does even better. Further improvements could certainly be made to the above pipeline, like:</p>
+<p>From here, one could start developing a trading strategy that would (hopefully) generate consistent positive returns over time. Looking at a few other years, sometimes the model doesn't do as well as hoped, while other times it does better. Further improvements could certainly be made to the above pipeline, like:</p>
 <ul>
-<li>Breaking the Wilshire 5000 index into individual sectors since different sectors have different baseline standards and mixing them together can confuse the model. For example, according to the <a href="http://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/pbvdata.html">Stern School of Business</a> a Price/Book ratio of $1.5$ is pretty good if your in the banking sector but terrible if you're in the Broadcasting sector.</li>
-<li>Filter by marketcap - like different sectors, different stocks of different market caps (small, medium, large) will also have different baseline standards. </li>
+<li>Breaking the Wilshire 5000 index into individual sectors. Different sectors have different baseline standards, and mixing them together can confuse the model. For example, according to the <a href="http://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/pbvdata.html">Stern School of Business</a> a Price/Book ratio of 1.5 is pretty good for a company in the banking sector but terrible for the broadcasting sector.</li>
+<li>Filter by marketcap - like sectors, different market caps (small, medium, large) will also have different baseline standards. </li>
 <li>Use a longer lookback time - Above we trained a model using only $t$ and $t-1$ to predict $t+1$, but one could easily extend the model to include $t-3$, $t-4$, ..., $t-X$ financial data.</li>
 <li>Cast the problem as a regression problem instead of classification. This is a more difficult but fruitful problem, since now you are trying to predict a value. </li>
 </ul>
-<p>One thing to be wary of if implementing some of these improvements is that at some point your dataset will become too small to effectively train your model as you keep chopping it up (by sector, market cap, etc.).  Machine learning in general requires a lot of data, and it was already perhaps pushing it using only 5000 stocks to train the model (vs. say 50,000).</p>
+<p>One thing to be wary of when implementing some of these improvements is that at some point your dataset will become too small to effectively train your model (as you chop the data up by sector, market cap, etc.).  Machine learning in general requires a lot of data, and it was already perhaps pushing it already using only 5000 stocks to train the model (vs. say 50,000).</p>
 <p>I hope you enjoyed this post analyzing stock prices using fundamental analysis and machine learning!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Helpful-Links">Helpful Links<a class="anchor-link" href="#Helpful-Links">&#182;</a></h2><p>Here are some helpful links used in making this blog post:</p>
+<p><a href="https://simply-python.com/2015/02/13/getting-historical-financial-statistics-of-stock-using-python/">https://simply-python.com/2015/02/13/getting-historical-financial-statistics-of-stock-using-python/</a><br>
+<a href="http://stackoverflow.com/questions/40139537/scrape-yahoo-finance-financial-ratios">http://stackoverflow.com/questions/40139537/scrape-yahoo-finance-financial-ratios</a><br>
+<a href="https://automatetheboringstuff.com/chapter11/">https://automatetheboringstuff.com/chapter11/</a><br>
+<a href="http://docs.python-guide.org/en/latest/scenarios/scrape/">http://docs.python-guide.org/en/latest/scenarios/scrape/</a><br>
+<a href="https://www.boxcontrol.net/write-simple-currency-converter-in-python.html">https://www.boxcontrol.net/write-simple-currency-converter-in-python.html</a></p>
 
 </div>
 </div>
 </div>
     </div>
   </div>
+  
+  <!-- Disqus Comment Bar -->
+  <div id="disqus_thread"></div>
+  <script>
+      
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  
+  var disqus_config = function () {
+      this.page.url = 'https://silburt.github.io/blog/fundamental_analysis.html';    // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = 'fundamental_analysis/';                                       // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  
+  (function() { // DON'T EDIT BELOW THIS LINE
+   var d = document, s = d.createElement('script');
+   s.src = 'https://silburt-github-io.disqus.com/embed.js';
+   s.setAttribute('data-timestamp', +new Date());
+   (d.head || d.body).appendChild(s);
+   })();
+      </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+  
+  <!-- Footer -->
+  <footer>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <p class="copyright text-muted small">Copyright &copy; Ari Silburt 2017.</p>
+              </div>
+          </div>
+      </div>
+  </footer>
+  
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+  
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+  
+  <!-- Disqus Comment Counter -->
+  <script id="dsq-count-scr" src="//silburt-github-io.disqus.com/count.js" async></script>
+  
+  
 </body>
 
- 
+
 
 
 </html>
